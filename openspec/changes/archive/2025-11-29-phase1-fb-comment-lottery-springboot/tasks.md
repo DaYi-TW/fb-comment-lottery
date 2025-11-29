@@ -1,0 +1,13 @@
+## 1. Implementation
+- [x] 1.1 Create Data Models: `FbComment` (author, content) and `Winner`.
+- [x] 1.2 Implement `LotteryService`:
+    - [x] Support random selection.
+    - [x] Support `allowDuplicate` (boolean) config.
+    - [x] Support `filterKeyword` (String) config.
+- [x] 1.3 Implement `LotteryController`:
+    - [x] Endpoint: `POST /fb/lottery`
+    - [x] Body: `{ "count": 1, "allowDuplicate": false, "filterKeyword": null, "participants": [...] }` (Adding participants to body for stateless phase 1).
+- [x] 1.4 Unit Tests:
+    - [x] Test filtering (keyword presence/absence).
+    - [x] Test deduplication (same author multiple comments).
+    - [x] Test random distribution (smoke test).

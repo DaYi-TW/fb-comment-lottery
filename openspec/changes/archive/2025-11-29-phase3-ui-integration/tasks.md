@@ -1,0 +1,12 @@
+## 1. Implementation
+- [x] 1.1 Create `src/main/resources/static/index.html`:
+    - [x] Basic layout (Header, Input Form, Results Area).
+- [x] 1.2 Create `src/main/resources/static/app.js`:
+    - [x] Logic to call `GET /fb/comments`.
+    - [x] Logic to render comments table.
+    - [x] Logic to call `POST /fb/lottery` (using the scraped data).
+    - [x] Logic to display winners.
+- [x] 1.3 Create `src/main/resources/static/styles.css`:
+    - [x] Basic styling for table and buttons.
+- [ ] 1.4 Backend Adjustments (if needed):
+    - [ ] Enable CORS if testing from a different origin (optional, since we are serving static).

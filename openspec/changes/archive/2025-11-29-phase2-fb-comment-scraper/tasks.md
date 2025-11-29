@@ -1,0 +1,12 @@
+## 1. Implementation
+- [x] 1.1 Add Playwright dependency to `pom.xml`.
+- [x] 1.2 Implement `FbScraperService`:
+    - [x] Initialize Playwright/Browser (ensure thread safety or proper lifecycle).
+    - [x] Implement `scrapeComments(String postUrl)`.
+    - [x] **Critical:** Implement robust selector strategy (`getByRole("article")`, filter by text) as requested.
+    - [x] Implement auto-scroll logic (loop until "See more" or end of page).
+- [x] 1.3 Implement `ScraperController`:
+    - [x] `GET /fb/comments?url=...` endpoint.
+- [ ] 1.4 Verification:
+    - [ ] Manual test with the specific user-provided URL: `https://www.facebook.com/ComeTrueCoffee.SE/posts/...`
+    - [ ] Unit/Integration test (Note: Real scraping is hard to unit test; might mock Playwright or use a "Integration" tag).
