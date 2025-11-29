@@ -4,20 +4,23 @@
 TBD - created by archiving change phase2-fb-comment-scraper. Update Purpose after archive.
 ## Requirements
 ### Requirement: Comment Scraping
-The system SHALL be able to extract comments from a public Facebook post URL.
+The system SHALL be able to extract ALL available comments efficiently.
 
-#### Scenario: Successful Scrape
-- **WHEN** a valid public Facebook post URL is provided
-- **THEN** the system returns a list of comments (Author + Content)
-
-#### Scenario: Scrolling
-- **WHEN** the post has more comments than initially visible
-- **THEN** the system automatically scrolls or clicks "View more" to load them
+#### Scenario: Fast Startup
+- **WHEN** the page loads
+- **THEN** the system checks for blocking modals with a **short timeout** (max 2s) to avoid blocking execution
 
 ### Requirement: Robust Selectors
-The scraping logic MUST rely on Accessibility Roles (ARIA) and Text Content rather than obfuscated CSS classes.
+The scraping logic MUST rely on Accessibility Roles (ARIA) and Text Content, supporting **Multiple Locales** (English, Traditional Chinese).
 
-#### Scenario: Selector Strategy
-- **WHEN** identifying a comment element
-- **THEN** it is found using `role="article"` or similar semantic structures
+#### Scenario: Chinese Locale
+- **WHEN** the Facebook page renders in Traditional Chinese
+- **THEN** the system identifies "最相關" (Most relevant) and "所有留言" (All comments) correctly
+
+### Requirement: Observability
+The scraping process MUST emit detailed logs to standard output to assist in debugging and monitoring progress.
+
+#### Scenario: Logging Progress
+- **WHEN** the scraper is running
+- **THEN** it logs the current iteration, total comments scraped, and specific actions (like clicking buttons)
 

@@ -1,0 +1,11 @@
+## 1. Implementation
+- [x] 1.1 Modify `FbScraperService.java`:
+    - [x] Add `private static final Logger logger = LoggerFactory.getLogger(FbScraperService.class);`
+    - [x] Replace `System.out.println` with `logger.info` / `logger.error`.
+    - [x] Add logs for:
+        - "Navigating to: [url]"
+        - "Attempting to switch filter..."
+        - "Filter switched to All Comments."
+        - "Iteration [i]: Found [n] comments so far."
+        - "Clicked 'View more' button."
+        - "Scraping finished. Total: [n]"
